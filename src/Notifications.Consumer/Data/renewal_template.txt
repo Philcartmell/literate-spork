@@ -1,0 +1,22 @@
+((letter_date))
+
+FAO: ((title)) ((first_name)) ((surname))
+
+RE: Your Renewal
+
+Dear ((title)) ((surname))
+
+We hereby invite you to renew your Insurance Policy, subject to the following terms.
+
+Your chosen insurance product is ((product_name)).
+
+The amount payable to you in the event of a valid claim will be £((payout_amount)).
+
+Your annual premium will be £((annual_premium)).
+
+If you choose to pay by Direct Debit, we will add a credit charge of £((credit_charge)), bringing the total to £((total_premium_dd)). This is payable by an initial payment of £((first_payment)), followed by 11 payments of £((subsequent_payment)) each.
+
+Please get in touch with us to arrange your renewal by visiting https://www.regallutoncodingtest.co.uk/renew or calling us on 01625 123456.
+
+Kind Regards
+Regal Luton
