@@ -56,10 +56,9 @@
       <Name>Notifications.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Data\Output\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Data\Output\placeholder.txt" />
     <Content Include="Data\renewal_template.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
