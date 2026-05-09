@@ -60,7 +60,7 @@ namespace Notifications.Core.Readers
         /// </summary>
         /// <param name="fields">Fields</param>
         /// <returns>Conversion and possible validation errors</returns>
-        internal static RenewalItemConversionResult TryConvertLine(int lineNumber, string[] fields)
+        public static RenewalItemConversionResult TryConvertLine(int lineNumber, string[] fields)
         {
             /*
              * expected fields spec
@@ -135,7 +135,7 @@ namespace Notifications.Core.Readers
         }
 
         
-        internal static bool TryAssertStringIsNullOrWhitespace(string[] fields, int lineNumber, int fieldIndex, string fieldName, string validationMessage, Dictionary<int, string> dict)
+        public static bool TryAssertStringIsNullOrWhitespace(string[] fields, int lineNumber, int fieldIndex, string fieldName, string validationMessage, Dictionary<int, string> dict)
         {
             if (fieldIndex < 0)
                 throw new ArgumentOutOfRangeException(nameof(fieldIndex));

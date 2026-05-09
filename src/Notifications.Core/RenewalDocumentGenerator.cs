@@ -48,7 +48,19 @@ namespace Notifications.Core
         /// <param name="outputPath">Output directory</param>
         /// <param name="templateFile">Template file</param>
         /// <returns>Renewal document generator</returns>
-        internal static RenewalDocumentGenerator Create(IFileSystem fileSystem, string sourceFile, string outputPath, string templateFile)
+        /// <summary>
+        /// Creates a renewal generator that works with basic file system
+        /// </summary>
+        /// <param name="sourceFile">Source CSV</param>
+        /// <param name="outputPath">Output directory</param>
+        /// <param name="templatePath">Template file</param>
+        /// <returns>Renewal document generator</returns>
+        public static RenewalDocumentGenerator Create(string sourceFile, string outputPath, string templatePath)
+        {
+            return Create(new FileSystem(), sourceFile, outputPath, templatePath);
+        }
+
+        public static RenewalDocumentGenerator Create(IFileSystem fileSystem, string sourceFile, string outputPath, string templateFile)
         {
             if (String.IsNullOrEmpty(templateFile))
                 throw new ArgumentNullException(nameof(templateFile), "Template file path cannot be null or empty");
@@ -66,18 +78,6 @@ namespace Notifications.Core
             var templateGenerator = new RenewalOutputGenerator("dd/MM/yyyy", templateContent);
 
             return new RenewalDocumentGenerator(fileSystem, inputReader, outputWriter, templateGenerator);
-        }
-
-        /// <summary>
-        /// Creates a renewal generator that works with basic file system
-        /// </summary>
-        /// <param name="sourceFile">Source CSV</param>
-        /// <param name="outputPath">Output directory</param>
-        /// <param name="templatePath">Template file</param>
-        /// <returns>Renewal document generator</returns>
-        public static RenewalDocumentGenerator Create(string sourceFile, string outputPath, string templatePath)
-        {
-            return Create(new FileSystem(), sourceFile, outputPath, templatePath);
         }
 
         /// <summary>

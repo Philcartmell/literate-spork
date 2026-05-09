@@ -90,7 +90,7 @@ namespace Notifications.Core.Writers
             }
         }
 
-        internal string ComputeFilename(IRenewalItem renewalItem)
+        public string ComputeFilename(IRenewalItem renewalItem)
         {
             return $"{renewalItem.Id.ToString()}-{renewalItem.Surname.RemoveAllExceptLettersOrDigits()}.txt";
         }
